@@ -9,7 +9,7 @@ from main import chatbot
 
 # Configuration de l'interface
 st.title("AuditBot")
-st.write("Interact with the chatbot powered by RAG and Gemini.")
+st.write("Interact with the chatbot powered by RAG.")
 
 # Initialisation de l'historique des messages
 if "messages" not in st.session_state:
