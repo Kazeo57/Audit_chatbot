@@ -1,6 +1,12 @@
+__import__('pysqlite3')
+import sys
+sys.modules['sqlite3'] = sys.modules.pop('pysqlite3')
+
+
 import streamlit as st
 import requests
 from main import chatbot
+
 
 # Configuration de l'interface
 st.title("AuditBot")
