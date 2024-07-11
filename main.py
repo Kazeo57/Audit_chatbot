@@ -20,12 +20,12 @@ api_key="AIzaSyA6J3u2hL4jNsFE67yy2q75KV9BSkdLHnI"
 
 
 #LLM loading. Here we use gemini
-llm= ChatGoogleGenerativeAI(model="gemini-pro", temperature=0.5)
+llm= ChatGoogleGenerativeAI(model="gemini-pro", temperature=0.5,google_api_key=api_key)
 
 
 
 #Embeddings
-embeddings = GoogleGenerativeAIEmbeddings(model="models/embedding-001", temperature=0.5)
+embeddings = GoogleGenerativeAIEmbeddings(model="models/embedding-001", temperature=0.5,google_api_key=api_key)
 
 
 
