@@ -14,8 +14,8 @@ from langchain.chains import create_retrieval_chain
 
 #API keys loading
 load_dotenv()
-api_key = os.getenv('GOOGLE_API_KEY')
-
+#api_key = os.getenv('GOOGLE_API_KEY')
+api_key="AIzaSyA6J3u2hL4jNsFE67yy2q75KV9BSkdLHnI"
 
 
 
