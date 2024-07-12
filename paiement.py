@@ -11,7 +11,7 @@ if not stripe.api_key:
     st.stop()
 
 # Configure the Streamlit page
-st.image("A..jpg")
+st.image("A..jpg",width=100)
 st.title("Payment Page")
 st.write("Please proceed with the payment to access the chatbot.")
 
