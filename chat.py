@@ -1,6 +1,3 @@
-__import__('pysqlite3')
-import sys
-sys.modules['sqlite3'] = sys.modules.pop('pysqlite3')
 
 import streamlit as st
  
@@ -10,7 +7,7 @@ from main import chatbot
 # Configuration de l'interface
 st.title("AuditBot")
 st.write("Interact with the chatbot.")
-
+st.image("A..jpg",width=100)
 # Initialisation de l'historique des messages
 if "messages" not in st.session_state:
     st.session_state.messages = []
