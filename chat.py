@@ -18,11 +18,11 @@ if "messages" not in st.session_state:
 
 
 # Saisie utilisateur
-user_input = st.text_input("Vous:", "")
+user_input = st.text_input("You:", "")
 
 # Si l'utilisateur a entré un message, ajoutez-le à l'historique et obtenez la réponse du chatbot
 if user_input:
-    st.session_state.messages.append(f"Vous: {user_input}")
+    st.session_state.messages.append(f"You: {user_input}")
     response = chatbot(user_input)
     st.session_state.messages.append(f"Chatbot: {response}")
 
