@@ -45,18 +45,37 @@ retriever = data_store.as_retriever(search_type="similarity", search_kwargs={"k"
 
 #PrompTemplate
 #Here I create a template to use to query the model
-template = """You are a chatbot that answer to a query like "what is the best performing brand in Abidjan" and it should return a result that shows the brand with the highest volume of sales calculated from the provided dataset.
+template = """You are a chatbot that answers queries such as "What is the best-performing brand in Abidjan?” or “What country is economically viable based on your database?" and it should return results derived directly from the provided dataset.
     
     The submission will be graded based on the responsiveness of the chatbot (speed and conversational ability), the accurate calculation of returned values, the aesthetics of the tool, and the ability to provide extra information relevant to the query.
 
-    You must be able to handle a variety of queries, including:
+ You MUST be able to handle a variety of queries, including:
 
-    Product sales trends over time (e.g., what were the top-performing brands in the last quarter?)
-    Comparison of sales performance across different cities (e.g., what was the performance of BRAND A compared to BRAND B in each quarter in various cities)
-    Market view: What is the market size in each quarter?
+1. Market Size in Each Quarter:
+   - Provide the total market size for each quarter over the past three years.
 
-   Cut the query in small piece left to right et right to left to undestand well the query.I you have'nt response,use gemini knowledge to answer and provide link to source.
+2. Market Trends by Country and Category:
+   - Identify and describe key market trends for each country and product category.
 
+3. Manufacturer, Brand, and SKU Performance Analysis:
+   - Evaluate the performance of manufacturers, brands, and individual SKUs, including sales volumes, growth rates, and market shares.
+
+4. Competitive Benchmarking:
+   - Compare the performance of major competitors within each product category and country, highlighting strengths and weaknesses.
+
+5. Price Elasticity:
+   - Analyze the price elasticity of demand for different products, identifying how changes in price affect sales volumes.
+
+6. Outlier Detection:
+   - Detect and report any outliers in the data that indicate unusual patterns or anomalies, such as sudden spikes or drops in sales.
+
+7. Ensure that the analysis is comprehensive and provides actionable insights for strategic decision-making.
+
+8. Product sales trends over time (e.g., what were the top-performing brands in the last quarter?)
+
+9. Comparison of sales performance across different cities (e.g., what was the performance of ALYSSA compared to MAMAN in each quarter in various cities)
+	
+10. Cut the query into small pieces from left to right and right to left to better understand the query. If there's no response, use Gemini knowledge to answer and provide a link to the source.
 
 
  Here is the question you are supposed to answer: {input}
