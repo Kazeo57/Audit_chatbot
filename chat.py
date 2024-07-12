@@ -3,7 +3,7 @@ import sys
 sys.modules['sqlite3'] = sys.modules.pop('pysqlite3')
 
 import streamlit as st
-import requests     
+ 
 from main import chatbot
 
 
@@ -15,20 +15,7 @@ st.write("Interact with the chatbot.")
 if "messages" not in st.session_state:
     st.session_state.messages = []
 
-# Fonction pour envoyer le message à l'API Gemini et recevoir une réponse
-def get_response_from_gemini(message):
-    # Remplacez par votre propre logique pour interagir avec l'API Gemini
-    # Par exemple :
-    api_url = "https://api.gemini.com/chatbot"  # URL fictive, remplacez par la véritable URL de l'API
-    headers = {
-        "Authorization": "AIzaSyDebvFeAS_ECJlbKImDBl4mqQRPgg6zEjQ",
-        "Content-Type": "application/json"
-    }
-    data = {
-        "input": message
-    }
-    response = requests.post(api_url, headers=headers, json=data)
-    return response.json()["response"]
+
 
 # Saisie utilisateur
 user_input = st.text_input("Vous:", "")
