@@ -12,7 +12,6 @@ if "messages" not in st.session_state:
     st.session_state.messages = []
 
 
-
 # Saisie utilisateur
 user_input = st.text_input("You:", "")
 
