@@ -7,7 +7,8 @@ from langchain.prompts import PromptTemplate
 from langchain.chains.combine_documents import create_stuff_documents_chain
 from langchain.chains import create_retrieval_chain
 
-
+import matplotlib.pyplot as plt 
+import seaborn as sns
 
 
 
@@ -92,4 +93,15 @@ def chatbot(question : str):
 
 
 
+
 print(chatbot("Make me a presnetation of what you can do"))
+
+def plot(elements:list):
+    """To see evolution of element"""
+    return plt.plot(elements)
+
+def histplot(labels:dict):
+    """To build a histogram on a lot of data to see behaviour or distribution """
+    return sns.histplot(labels)
+
+
